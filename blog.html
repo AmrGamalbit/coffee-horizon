@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        />
+        <title>Blog</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul id="navbar-links">
+                    <li><a href="index.html" class="link">Dashboard</a></li>
+                    <li><a href="blog.html" class="link">Blog</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="post-editor">
+                <h2>Create post</h2>
+                <form action="">
+                    <label for="title-input">Title</label>
+                    <input type="text" id="title-input" name="title-input" />
+                    <label for="content-input">Content</label>
+                    <textarea
+                        name="content-input"
+                        id="content-input"
+                    ></textarea>
+                    <button type="submit">Post</button>
+                </form>
+            </section>
+            <section id="blog-posts"></section>
+        </main>
+        <script src="js/blog.js"></script>
+    </body>
+</html>

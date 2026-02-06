@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Inter", sans-serif;
 }
 
 body {
@@ -127,7 +128,6 @@ main #hero {
     background-color: #fff0d1;
     color: #3b3030;
     width: 20%;
-    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     overflow: hidden;
 }
@@ -158,4 +158,95 @@ main #hero {
 
 #cups-drunk {
     color: #3B3030;
+}
+
+/* The blog page styles */
+
+#post-editor {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FFF0D1;
+    background-color: #3B3030;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#post-editor form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-height: 200px;
+    max-width: 400px;
+}
+
+#post-editor #title-input {
+    background-color: #FFF0D1;
+    color: #3B3030;
+    border: none;
+    padding: 5px;
+    max-width: 100%;
+}
+
+#post-editor #content-input {
+    background-color: #FFF0D1;
+    color: #3B3030;
+    border: none;
+    padding: 5px;
+    height: 200px;
+}
+
+#post-editor form button {
+    border: none;
+    background-color: #795757;
+    color: #FFF0D1;
+    border-radius: 10px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+#post-editor form button:hover {
+    filter: brightness(90%);
+}
+
+#post-editor h2 {
+    font-size: 30px;
+    color: #795757;
+    margin-bottom: 20px;
+}
+
+#blog-posts {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+    padding: 50px;
+}
+
+.blog-post {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.light-coffee {
+    background-color: #FFF0D1;
+    color: #3B3030;
+}
+
+.dark-coffee {
+    background-color: #3B3030;
+    color: #FFF0D1;
+}
+
+.post-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.post-content {
+    margin-top: 20px;
 }
