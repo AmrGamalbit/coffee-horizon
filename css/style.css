@@ -253,6 +253,13 @@ main #hero {
     margin-top: 5px;
 }
 
+.toggle-post {
+    margin-top: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .post-content {
     margin-top: 20px;
 }

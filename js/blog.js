@@ -1,6 +1,7 @@
 const blogSection = document.querySelector("#blog-posts");
 const themes = ["dark-coffee", "light-coffee"];
 const postForm = document.querySelector("#post-editor form");
+const maxLength = 50;
 
 if (!JSON.parse(localStorage.getItem("posts"))) {
   const blogPosts = [
@@ -44,7 +45,8 @@ function submitPost() {
     publishedAt: today,
     content: contentInput.value,
   };
-
+  titleInput.value = ''
+  contentInput.value = ''
   const blogPosts = JSON.parse(localStorage.getItem("posts"));
   blogPosts.push(blogPost);
   localStorage.setItem("posts", JSON.stringify(blogPosts));
@@ -73,15 +75,34 @@ function createNewPost({ title, author, publishedAt, content }) {
   const titleNode = document.createTextNode(title);
   const authorNode = document.createTextNode(author);
   const dateNode = document.createTextNode(publishedAt);
-  const contentNode = document.createTextNode(content);
 
   postTitle.appendChild(titleNode);
   postAuthor.appendChild(authorNode);
   postDate.appendChild(dateNode);
   postInfo.append(postAuthor, postDate);
+
+  const isExpandable = content.length > maxLength;
+  const fullText = content;
+  const shortText = isExpandable
+    ? content.substring(0, maxLength) + "..."
+    : content;
+  const contentNode = document.createTextNode(shortText);
   postContent.appendChild(contentNode);
 
-  newPost.append(postTitle, postInfo, postContent);
+  if (isExpandable) {
+    const toggleBtn = document.createElement("span");
+    toggleBtn.textContent = "Read More";
+    toggleBtn.className = "toggle-post";
+
+    toggleBtn.addEventListener("click", (e) => {
+      const expanded = postContent.classList.toggle("expanded");
+      toggleBtn.textContent = expanded ? "Read Less" : "Read More";
+      contentNode.textContent = expanded ? fullText : shortText;
+    });
+    newPost.append(postTitle, postInfo, postContent, toggleBtn);
+  } else {
+    newPost.append(postTitle, postInfo, postContent);
+  }
 
   blogSection.appendChild(newPost);
 }
