@@ -149,7 +149,7 @@ main #hero {
 
 #drink-summary {
     width: 80%;
-    color: #FFF0D1;
+    color: #fff0d1;
     font-size: 25px;
     display: flex;
     justify-content: center;
@@ -157,7 +157,7 @@ main #hero {
 }
 
 #cups-drunk {
-    color: #3B3030;
+    color: #3b3030;
 }
 
 /* The blog page styles */
@@ -167,11 +167,11 @@ main #hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #FFF0D1;
+    color: #fff0d1;
     background-image: url("../images/coffee.jpg");
     background-position: center;
     background-size: cover;
-    background-color: #3B3030;
+    background-color: #3b3030;
     border-radius: 20px;
     padding: 20px;
 }
@@ -183,22 +183,22 @@ main #hero {
     width: 100%;
     max-height: 200px;
     max-width: 400px;
-    border: 3px solid #3B3030;
+    border: 3px solid #3b3030;
     padding: 10px;
     border-radius: 10px;
 }
 
 #post-editor #title-input {
-    background-color: #FFF0D1;
-    color: #3B3030;
+    background-color: #fff0d1;
+    color: #3b3030;
     border: none;
     padding: 5px;
     max-width: 100%;
 }
 
 #post-editor #content-input {
-    background-color: #FFF0D1;
-    color: #3B3030;
+    background-color: #fff0d1;
+    color: #3b3030;
     border: none;
     padding: 5px;
     height: 200px;
@@ -207,7 +207,7 @@ main #hero {
 #post-editor form button {
     border: none;
     background-color: #795757;
-    color: #FFF0D1;
+    color: #fff0d1;
     border-radius: 10px;
     padding: 2px;
     cursor: pointer;
@@ -238,13 +238,13 @@ main #hero {
 }
 
 .light-coffee {
-    background-color: #FFF0D1;
-    color: #3B3030;
+    background-color: #fff0d1;
+    color: #3b3030;
 }
 
 .dark-coffee {
-    background-color: #3B3030;
-    color: #FFF0D1;
+    background-color: #3b3030;
+    color: #fff0d1;
 }
 
 .post-info {

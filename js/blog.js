@@ -5,16 +5,30 @@ const postForm = document.querySelector("#post-editor form");
 if (!JSON.parse(localStorage.getItem("posts"))) {
   const blogPosts = [
     {
-      title: "Coffee Break",
-      author: "Grizzle",
-      content: "There is something magical ",
+      title: "The morning habit",
+      author: "Grizzle Mocha",
+      content: "Every day starts better when I taste my delicious coffee.",
       publishedAt: "2026-02-05",
     },
     {
-      title: "How Coffee Affects Productivity",
-      author: "Jane Doe",
-      content: "I like my coffee so much",
+      title: "My creativity is way better with coffee",
+      author: "Jane Latte",
+      content: "A cup of coffee fuels my thoughts and sparks new ideas.",
       publishedAt: "2026-02-05",
+    },
+    {
+      title: "Coffee and Calm",
+      author: "Alex Brew",
+      content:
+        "A quiet cup in the morning makes the chaos of the day feel manageable.",
+      publishedAt: "2026-02-06",
+    },
+    {
+      title: "My Visit to the New Cafe",
+      author: "Lara Bean",
+      content:
+        "A new cafe opened downtown, and I was lucky to be one of the first to try it.",
+      publishedAt: "2026-02-06",
     },
   ];
   localStorage.setItem("posts", JSON.stringify(blogPosts));
@@ -31,7 +45,7 @@ function submitPost() {
     content: contentInput.value,
   };
 
-  const blogPosts = JSON.parse(localStorage.getItem("posts"))
+  const blogPosts = JSON.parse(localStorage.getItem("posts"));
   blogPosts.push(blogPost);
   localStorage.setItem("posts", JSON.stringify(blogPosts));
   createNewPost(blogPost);
