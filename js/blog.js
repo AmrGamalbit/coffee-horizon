@@ -39,9 +39,17 @@ function submitPost() {
   const titleInput = document.querySelector("#post-editor form input");
   const contentInput = document.querySelector("#post-editor form textarea");
   const today = new Date().toISOString().split("T")[0];
+  let author;
+  if (localStorage.getItem("name")) {
+    author = localStorage.getItem("name")
+  } else {
+    alert("Enter your name in the dashboard first")
+    return
+  }
+
   const blogPost = {
     title: titleInput.value,
-    author: window.name,
+    author: author,
     publishedAt: today,
     content: contentInput.value,
   };

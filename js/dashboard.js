@@ -1,14 +1,14 @@
 window.addEventListener("load", () => {
-  if (!window.name) {
+  const greetingText = document.getElementById("name");
+  if (!localStorage.getItem("name")) {
     const overlay = document.querySelector("#overlay");
     overlay.style.display = "flex";
     const usernameInput = document.querySelector("#username-input");
     const submitBtn = document.querySelector("#submit-btn");
-    const greetingText = document.getElementById("name");
 
     submitBtn.addEventListener("click", () => {
       const name = usernameInput.value.trim();
-      window.name = name;
+      localStorage.setItem("name", name);
       if (name) {
         alert(`Welcome, ${name}!`);
         overlay.style.display = "none";
@@ -20,6 +20,8 @@ window.addEventListener("load", () => {
     usernameInput.addEventListener("keypress", (e) => {
       if (e.key === "Enter") submitBtn.click();
     });
+  } else {
+    greetingText.innerText = localStorage.getItem("name");
   }
 });
 
