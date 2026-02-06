@@ -25,11 +25,21 @@ window.addEventListener("load", () => {
   }
 });
 
+function updateTracker(coffeeCount) {
+  cups.textContent = coffeeCount;
+  coffeeSlider.value = coffeeCount;
+  saturation = coffeeCount * 10;
+  cups.style.color = `hsl(0, ${saturation}%, 21%)`;
+}
+
 const coffeeSlider = document.getElementById("coffee-slider");
 const cups = document.getElementById("cups-drunk");
 let saturation = 0;
 coffeeSlider.addEventListener("input", () => {
-  cups.textContent = coffeeSlider.value;
-  saturation = coffeeSlider.value * 10;
-  cups.style.color = `hsl(0, ${saturation}%, 21%)`;
+  localStorage.setItem("coffees", JSON.stringify(coffeeSlider.value));
+  updateTracker(coffeeSlider.value);
 });
+
+if (JSON.parse(localStorage.getItem("coffees"))) {
+  updateTracker(JSON.parse(localStorage.getItem("coffees")));
+}

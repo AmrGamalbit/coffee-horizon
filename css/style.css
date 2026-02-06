@@ -275,4 +275,7 @@ main #hero {
     #coffee-tracker {
         width: 80%;
     }
+    #drink-summary h2 {
+        margin-left: 10px;
+    }
 }
