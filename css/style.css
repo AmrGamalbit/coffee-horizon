@@ -150,7 +150,7 @@ main #hero {
 #drink-summary {
     width: 80%;
     color: #fff0d1;
-    font-size: 25px;
+    font-size: clamp(20px, 3vw, 30px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -237,6 +237,10 @@ main #hero {
     border-radius: 20px;
 }
 
+.blog-post h2 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
 .light-coffee {
     background-color: #fff0d1;
     color: #3b3030;
@@ -262,4 +266,13 @@ main #hero {
 
 .post-content {
     margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .blog-post {
+        padding: 10px;
+    }
+    #coffee-tracker {
+        width: 80%;
+    }
 }
